@@ -1,0 +1,44 @@
+FUNCTION compteLengthCaracteres(str) : INTEGER
+VAR
+    str : STRING ;
+BEGIN
+    IF (!str) THEN
+        RETURN 0;
+    END_IF
+    RETURN str.length ;
+END
+FUNCTION umberWord(str) : INTEGER
+VAR
+    nbrwords : INTEGER := 0;
+    i : INTEGER;
+    str : STRING;
+BEGIN
+    IF (!str) THEN
+        RETURN 0;
+    ELSE
+        FOR i FROM 1 TO str.length STEP 1  DO
+            IF (str[i-1] !==' ' && str[i]==' ') THEN
+                nbrwords++;
+            END_IF
+        END_FOR
+    END_IF
+    RETURN nbrwords ;
+END
+FUNCTION numberVowels(str) : INTEGER
+VAR
+    str : STRING;
+    i : INTEGER;
+    nbrVowels : INTEGER := 0;
+BEGIN
+    IF (!str) THEN
+        RETURN 0;
+    ELSE
+        FOR i FROM 0 TO str.length STEP 1  DO
+         IF (str[i] =='a' || 'e' || 'i' || 'o' || 'u' || 'y') THEN
+        nbrVowels++;
+         END_IF
+        END_FOR
+    END_IF
+    
+    RETURN nbrVowels ;
+END
