@@ -1,44 +1,31 @@
-FUNCTION compteLengthCaracteres(str) : INTEGER
+ALGORITHM SENTENCE
 VAR
-    str : STRING ;
+    step,i,j : INTEGER
+    str: STRING
+    voyels : STRING
+    nbcaractere  :INTEGER= 0 
+    nbwords :INTEGER = 0
+    nbvoyels: INTEGER = 0 
+    voyels :STRING = "aeiouAEIOU",
+
 BEGIN
-    IF (!str) THEN
-        RETURN 0;
-    END_IF
-    RETURN str.length ;
-END
-FUNCTION umberWord(str) : INTEGER
-VAR
-    nbrwords : INTEGER := 0;
-    i : INTEGER;
-    str : STRING;
-BEGIN
-    IF (!str) THEN
-        RETURN 0;
-    ELSE
-        FOR i FROM 1 TO str.length STEP 1  DO
-            IF (str[i-1] !==' ' && str[i]==' ') THEN
-                nbrwords++;
-            END_IF
-        END_FOR
-    END_IF
-    RETURN nbrwords ;
-END
-FUNCTION numberVowels(str) : INTEGER
-VAR
-    str : STRING;
-    i : INTEGER;
-    nbrVowels : INTEGER := 0;
-BEGIN
-    IF (!str) THEN
-        RETURN 0;
-    ELSE
-        FOR i FROM 0 TO str.length STEP 1  DO
-         IF (str[i] =='a' || 'e' || 'i' || 'o' || 'u' || 'y') THEN
-        nbrVowels++;
-         END_IF
-        END_FOR
-    END_IF
-    
-    RETURN nbrVowels ;
+    Write ("enter a sentence "),
+    read (str),
+
+FOR i FROM 0 TO str.length-1 STEP step  DO 
+ IF (str[i]= ' ' OR str[i]= '.') THEN
+    nbwords:= nbwords+1 
+ END_IF
+ IF (str[i]= voyels) THEN
+   nbvoyels=nbvoyels+1 
+ END_IF
+ nbcaractere= nbcaractere+1
+
+
+END_FOR
+ read (nbvoyels),
+ read(nbwords),
+ read(nbcaractere),
+
+
 END
